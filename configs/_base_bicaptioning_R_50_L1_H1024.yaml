@@ -8,8 +8,8 @@ CUDNN_BENCHMARK: true
 CUDNN_DETERMINISTIC: false
 
 DATA:
-  ROOT: "datasets/coco"
-  TOKENIZER_MODEL: "datasets/vocab/coco_10k.model"
+  ROOT: "/content/virtex/datasets/coco"
+  TOKENIZER_MODEL: "/content/virtex/datasets/coco/vocab/coco_10k.model"
   VOCAB_SIZE: 10000
   UNK_INDEX: 0
   SOS_INDEX: 1
@@ -56,12 +56,12 @@ OPTIM:
     ALPHA: 0.5
     STEPS: 5
 
-  BATCH_SIZE: 256
+  BATCH_SIZE: 128
   CNN_LR: 0.2
   LR: 0.001
-  NUM_ITERATIONS: 500000
+  NUM_ITERATIONS: 20000
 
-  WARMUP_STEPS: 10000
+  WARMUP_STEPS: 5000
   LR_DECAY_NAME: "cosine"
 
   NO_DECAY: ".*textual.(embedding|transformer).*(norm.*|bias)"

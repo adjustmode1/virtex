@@ -278,7 +278,7 @@ class TransformerDecoderTextualHead(TextualHead):
         return output_logits
 
     @staticmethod
-    @functools.cache
+    @functools.lru_cache()
     def make_future_mask(
         size: int, dtype: torch.dtype, device: torch.device
     ) -> torch.Tensor:
